@@ -2,6 +2,7 @@ const db = require("../Config/DatabaseConnection");
 
 const GetCategories =(req, res) => {
     db.query("SELECT * from category", (err, result) =>{
+        console.log("ahla bik ")
         if (err) {
             console.log(err);
         } else {
@@ -9,7 +10,7 @@ const GetCategories =(req, res) => {
         }
     });
 };
-
+/*
 const GetCategoriesById = (req,res) => {
     db.query("SELECT * from category WHERE idCategory = ?" ,[req.params.idCategory] ,(err, row) => {
         if (err) {
@@ -52,10 +53,6 @@ const UpdateCategory =(req,res) => {
             res.send(result);
         }
     });
-};
+};*/
 
-module.exports ={ GetCategories }
-module.exports ={ GetCategoriesById }
-module.exports ={ AddCategory }
-module.exports ={ DeleteCategory }
-module.exports ={ UpdateCategory }
+module.exports ={ GetCategories/*,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory*/};
