@@ -1,7 +1,7 @@
 const db = require("../Config/DatabaseConnection");
 
 const GetCategories =(req, res) => {
-    db.query("Select * from category", (err, result) =>{
+    db.query("SELECT * from category", (err, result) =>{
         if (err) {
             console.log(err);
         } else {
@@ -11,7 +11,7 @@ const GetCategories =(req, res) => {
 };
 
 const GetCategoriesById = (req,res) => {
-    db.query("Select * from category WHERE idCategory = ?" ,[req.params.idCategory] ,(err, row) => {
+    db.query("SELECT * from category WHERE idCategory = ?" ,[req.params.idCategory] ,(err, row) => {
         if (err) {
             console.log(err);
         } else {
@@ -23,7 +23,7 @@ const GetCategoriesById = (req,res) => {
 const AddCategory = (req,res) => {
 
     const params = req.body;
-    db.query("Insert into category set ?" ,params, (err, row) =>{
+    db.query("INSERT INTO category SET ?" ,params, (err, row) =>{
         if (err) {
             console.log(err);
         } else {
@@ -34,7 +34,7 @@ const AddCategory = (req,res) => {
 
 const DeleteCategory =(req,res) => {
 
-    db.query("Delete from category where idCategory = ?" ,[req.params.idCategory],(err,row) =>{
+    db.query("DELETE from category WHERE idCategory = ?" ,[req.params.idCategory],(err,row) =>{
         if (err) {
             console.log(err);
         } else {
@@ -45,7 +45,7 @@ const DeleteCategory =(req,res) => {
 
 const UpdateCategory =(req,res) => {
 
-    db.query("Delete from category where idCategory = ?" ,[req.params.idCategory],(err,row) =>{
+    db.query("UPDATE category SET ? WHERE idCategory = ?" ,[req.params.idCategory],(err,row) =>{
         if (err) {
             console.log(err);
         } else {
