@@ -10,9 +10,9 @@ const GetCategories =(req, res) => {
         }
     });
 };
-/*
+
 const GetCategoriesById = (req,res) => {
-    db.query("SELECT * from category WHERE idCategory = ?" ,[req.params.idCategory] ,(err, row) => {
+    db.query("SELECT * from category WHERE id_category = ?" ,[req.params.id] ,(err, result ) => {
         if (err) {
             console.log(err);
         } else {
@@ -24,7 +24,7 @@ const GetCategoriesById = (req,res) => {
 const AddCategory = (req,res) => {
 
     const params = req.body;
-    db.query("INSERT INTO category SET ?" ,params, (err, row) =>{
+    db.query("INSERT INTO category SET ?" ,params, (err, result) =>{
         if (err) {
             console.log(err);
         } else {
@@ -35,7 +35,7 @@ const AddCategory = (req,res) => {
 
 const DeleteCategory =(req,res) => {
 
-    db.query("DELETE from category WHERE idCategory = ?" ,[req.params.idCategory],(err,row) =>{
+    db.query("DELETE from category WHERE id_category = ?" ,[req.params.id],(err,result) =>{
         if (err) {
             console.log(err);
         } else {
@@ -46,13 +46,14 @@ const DeleteCategory =(req,res) => {
 
 const UpdateCategory =(req,res) => {
 
-    db.query("UPDATE category SET ? WHERE idCategory = ?" ,[req.params.idCategory],(err,row) =>{
+    const{ name_category,description_category,photo_category} = req.body
+    db.query("UPDATE category SET name_category = ? ,description_category = ?, photo_category = ? WHERE id_category= ?" ,[name_category,description_category,photo_category,req.params.id],(err,result) =>{
         if (err) {
             console.log(err);
         } else {
             res.send(result);
         }
     });
-};*/
+};
 
-module.exports ={ GetCategories/*,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory*/};
+module.exports ={ GetCategories,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory};
