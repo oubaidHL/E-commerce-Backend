@@ -5,6 +5,7 @@ const CategoriesRoutes = require("./src/Routes/Category");
 const SubCategoriesRoutes = require('./src/Routes/SubCategory');
 const ProductRoutes = require('./src/Routes/Product');
 const RatingRoutes = require('./src/Routes/Rating');
+const ReviewRoutes = require('./src/Routes/Review');
 
 require("dotenv").config();
 
@@ -14,6 +15,7 @@ app.use("/categories/", CategoriesRoutes);
 app.use("/subcategories/",SubCategoriesRoutes);
 app.use("/product/",ProductRoutes);
 app.use("/rating/",RatingRoutes);
+app.use("/review/",ReviewRoutes);
 
 
 app.listen(process.env.PORT, () => {
