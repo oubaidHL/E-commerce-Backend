@@ -56,4 +56,5 @@ const UpdateCategory =(req,res) => {
     });
 };
 
+
 module.exports ={ GetCategories,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory};

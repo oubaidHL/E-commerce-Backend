@@ -9,5 +9,4 @@ router.post("/addcategory",userController.AddCategory);
 router.delete("/deletecategory/:id",userController.DeleteCategory);
 router.put("/updatecategory/:id",userController.UpdateCategory);
 
-
 module.exports =router;
