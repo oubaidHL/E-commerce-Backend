@@ -57,4 +57,5 @@ const UpdateCategory =(req,res) => {
 };
 
 
-module.exports ={ GetCategories,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory};
+
+module.exports ={ GetCategories,GetCategoriesById,DeleteCategory, AddCategory,UpdateCategory };
